@@ -7,6 +7,15 @@
   background: image_url('kindajean.png');
   padding: 10px;
   color: #1d0238;
+
+  .navbar-collapse {
+    .navbar-nav {
+      a.nav-item {
+      color: #1d0238;
+      font-weight: 400;
+      } 
+    }
+  }
 }
 
 .navbar-inverse a.navbar-brand {
@@ -15,10 +24,7 @@
   color: #50336d;
 }
 
-.navbar .navbar-collapse .navbar-nav a.nav-item {
-  color: #1d0238;
-  font-weight: 400;
-}
+
 
 h1, h2, h3, h4, h5, h6, .navbar {
   margin: 0;
@@ -82,8 +88,28 @@ body {
   border: 1px solid #ccc;
   border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
   padding: 10px;
+  margin-top: 20px;
+
+  .simple_form {
+    .form-actions {
+      .button {
+        border-color: #755496;
+        background: none;
+      }
+    }
+    .form-inputs {
+      .textbox-border {
+        border-color: #755496;
+        border-radius: 0;
+      }
+    }
+  }
 }
 
 .booyah-box h2, .booyah-box h1 {
   margin: 10px;
+}
+
+.shared-links {
+  color: #50336d;
 }
