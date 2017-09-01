@@ -7,11 +7,49 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
+
+  <div id="flex-content-container">
+      <nav class="navbar navbar-toggleable-md navbar-inverse bg-faded">
+        <a class="navbar-brand" href="#">Flixter</a>
+
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="#">See All Courses</a>
+
+            <% if user_signed_in? %>
+              <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-item nav-link' %>
+            <% else %>
+              <%= link_to 'Sign in', new_user_session_path, class: 'nav-item nav-link' %>
+              <%= link_to 'Sign up', new_user_registration_path, class: 'nav-item nav-link' %>
+            <% end %>
+          </div>
+
+
+        </div>
+      </nav>
+
+
+      <% if notice.present? %>
+        <p class="alert alert-info"><%= notice %></p>
+      <% end %>
+
+      <% if alert.present? %>
+        <p class="alert alert-danger"><%= alert %></p>
+      <% end %>
+
+
     <%= yield %>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+        <b>Footer Here</b>
+        <br />
+        <%= link_to 'Link', '#' %>
+      </div>
+    </div>
   </body>
 </html>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
