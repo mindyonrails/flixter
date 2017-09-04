@@ -16,9 +16,7 @@
        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
             <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-            <li class="nav-item">
-              <%= link_to 'See All Courses', courses_path %>
-            </li>
+            <%= link_to 'See All Courses', courses_path, class: 'nav-item nav-link' %>
 
             <% if user_signed_in? %>
               <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-item nav-link' %>
