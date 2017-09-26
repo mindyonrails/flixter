@@ -74,3 +74,5 @@ gem 'carrierwave-aws'
 gem 'pry'
 
 gem 'stripe'
+
+gem 'ranked-model'
