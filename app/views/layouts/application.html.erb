@@ -12,20 +12,30 @@
 
   <div id="flex-content-container">
       <nav class="navbar navbar-toggleable-md navbar-inverse bg-faded">
-        <a class="navbar-brand" href="#">Flixter</a>
+        <%= link_to 'Flixter', root_path, class: 'navbar-brand' %>
 
        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+            <%= link_to 'Home', root_path, class: 'nav-item nav-link active' %>
             <%= link_to 'See All Courses', courses_path, class: 'nav-item nav-link' %>
 
-            <% if user_signed_in? %>
-              <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-item nav-link' %>
-            <% else %>
-              <%= link_to 'Sign in', new_user_session_path, class: 'nav-item nav-link' %>
-              <%= link_to 'Sign up', new_user_registration_path, class: 'nav-item nav-link' %>
-            <% end %>
-          </div>
+            <ul class="nav-item">
+              <% if user_signed_in? %>
+                <li class="nav-item">
+                  <%= link_to 'My Dashboard', dashboard_path %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+                </li>
+              <% else %>
+                <li class="nav-item">
+                  <%= link_to 'Sign in', new_user_session_path, class: 'nav-link' %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to 'Sign up!', new_user_registration_path, class: 'nav-link' %>
+                </li>
+              <% end %>
+            </ul>
 
 
         </div>
